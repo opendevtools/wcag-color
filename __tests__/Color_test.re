@@ -1,38 +1,50 @@
 open Jest;
 open Expect;
 
-describe("#contrast", () => {
+describe("#score", () => {
   test("handles white on black", () =>
-    expect(Color.contrast("#ffffff", "#000000")) |> toEqual(21.0)
+    expect(Color.score("#ffffff", "#000000")) |> toEqual(21.0)
   );
 
   test("handles white on grayish", () =>
-    expect(Color.contrast("#ffffff", "#777777")) |> toEqual(4.48)
+    expect(Color.score("#ffffff", "#777777")) |> toEqual(4.48)
+  );
+
+  test("handles random colors (blue on pink)", () =>
+    expect(Color.score("#0088FF", "#C611AB")) |> toEqual(1.47)
+  );
+
+  test("handles hex without hash", () =>
+    expect(Color.score("ffffff", "777777")) |> toEqual(4.48)
+  );
+
+  test("handles hex with shorthand", () =>
+    expect(Color.score("fff", "777")) |> toEqual(4.48)
   );
 
   test("handles rgb colors", () =>
-    expect(Color.contrast("rgb(255,255,255)", "#777777")) |> toEqual(4.48)
+    expect(Color.score("rgb(255,255,255)", "#777777")) |> toEqual(4.48)
   );
 
   test("handles two rgb colors", () =>
-    expect(Color.contrast("rgb(255,255,255)", "rgb(77,77,77)"))
+    expect(Color.score("rgb(255,255,255)", "rgb(77,77,77)"))
     |> toEqual(8.45)
   );
 
   test("handles hsl colors without saturation", () =>
-    expect(Color.contrast("hsl(0, 0%, 20%)", "#ffffff")) |> toEqual(12.63)
+    expect(Color.score("hsl(0, 0%, 20%)", "#ffffff")) |> toEqual(12.63)
   );
 
   test("handles hsl colors with lightness lower than 50", () =>
-    expect(Color.contrast("hsl(210, 30%, 48%)", "#ffffff")) |> toEqual(4.47)
+    expect(Color.score("hsl(210, 30%, 48%)", "#ffffff")) |> toEqual(4.47)
   );
 
   test("handles hsl colors with lightness higher than 50", () =>
-    expect(Color.contrast("hsl(210, 30%, 68%)", "#ffffff")) |> toEqual(2.31)
+    expect(Color.score("hsl(210, 30%, 68%)", "#ffffff")) |> toEqual(2.35)
   );
 
   test("handles two hsl colors", () =>
-    expect(Color.contrast("hsl(0, 0%, 20%)", "hsl(0, 0%, 100%)"))
+    expect(Color.score("hsl(0, 0%, 20%)", "hsl(0, 0%, 100%)"))
     |> toEqual(12.63)
   );
 });
