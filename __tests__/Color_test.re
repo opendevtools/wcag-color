@@ -1,6 +1,21 @@
 open Jest;
 open Expect;
 
+testAll(
+  "colors are equal",
+  [
+    ("#ffffff", "#ffffff"),
+    ("ffffff", "ffffff"),
+    ("rgb(255, 255, 255)", "rgb(255, 255, 255)"),
+    ("rgb(255,255,255)", "rgb(255, 255, 255)"),
+    ("hsl(255, 30%, 40%)", "hsl(255, 30%, 40%)"),
+    ("hsl(255,30,40)", "hsl(255, 30%, 40%)"),
+    ("#ffffff", "rgb(255, 255, 255)"),
+  ],
+  ((fg, bg)) =>
+  expect(Color.score(fg, bg)) |> toEqual(1.0)
+);
+
 describe("#score", () => {
   test("handles white on black", () =>
     expect(Color.score("#ffffff", "#000000")) |> toEqual(21.0)

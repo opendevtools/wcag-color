@@ -28,13 +28,17 @@ let parseColor = color =>
   |> Luminance.convert
   |> (v => v +. 0.05);
 
-let score = (fg, bg) => {
-  (
-    switch (fg |> parseColor, bg |> parseColor) {
-    | (f, b) when f > b => f /. b
-    | (f, b) => b /. f
-    }
-  )
-  |> Js.Float.toFixedWithPrecision(~digits=2)
-  |> Js.Float.fromString;
+let score = (foreground, background) => {
+  switch (foreground |> Utils.removeHash, background |> Utils.removeHash) {
+  | (fg, bg) when fg === bg => 1.0
+  | (fg, bg) =>
+    (
+      switch (fg |> parseColor, bg |> parseColor) {
+      | (f, b) when f > b => f /. b
+      | (f, b) => b /. f
+      }
+    )
+    |> Js.Float.toFixedWithPrecision(~digits=2)
+    |> Js.Float.fromString
+  };
 };
