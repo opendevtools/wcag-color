@@ -28,7 +28,7 @@ let parseColor = color =>
   |> Luminance.convert
   |> (v => v +. 0.05);
 
-let score = (foreground, background) => {
+let calculate = (foreground, background) => {
   switch (foreground |> Utils.removeHash, background |> Utils.removeHash) {
   | (fg, bg) when fg === bg => 1.0
   | (fg, bg) =>

@@ -15,24 +15,56 @@ npm install wcag-color
 
 ## API
 
-### Score
+### Ratio
 
-`score` takes two colors, a foreground color, and background color, and returns a contrast ratio. `score` accepts most color formats:
+`ratio` takes two colors, a foreground color, and background color, and returns a contrast ratio. `ratio` accepts most color formats:
 
 - **HEX** - normal (`#0088ff`), shorthand (`#08f`) and without hash (`08f`)
 - **RGB** - `rgb(255, 255, 255)`
 - **HSL** - `hsl(210, 100%, 40%)`
 
 ```js
-score(foreground: string, background: string) => number
+ratio(foreground: string, background: string) => number
 ```
 
 #### Example
 
 ```js
+import { ratio } from 'wcag-color'
+
+ratio('hsl(210, 100%, 40%)', '#ffffff') // 5.57
+```
+
+### Score
+
+`score` takes two colors and returns a score value. Read more below.
+
+```js
+score(foreground: string, background: string) => 'Fail' | 'AA Large' | 'AA' | 'AAA'
+```
+
+### Example
+
+```js
 import { score } from 'wcag-color'
 
-score('hsl(210, 100%, 40%)', '#ffffff') // 21
+score('hsl(210, 100%, 40%)', '#ffffff') // AA
+```
+
+### Score from ratio
+
+`scoreFromRatio` takes a ratio and returns a score value.
+
+```js
+scoreFromRatio(ratio: number) => 'Fail' | 'AA Large' | 'AA' | 'AAA'
+```
+
+### Example
+
+```js
+import { scoreFromRatio } from 'wcag-color'
+
+scoreFromRatio(7.5) // AAA
 ```
 
 ## Score and ratio
