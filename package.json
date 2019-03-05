@@ -1,7 +1,7 @@
 {
   "name": "wcag-color",
   "description": "Color constrast helpers to achieve the WCAG 2.0 standard",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "dist/wcag-color.cjs.js",
   "module": "dist/wcag-color.esm.js",
   "types": "dist/index.d.ts",
