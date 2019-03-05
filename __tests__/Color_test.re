@@ -59,7 +59,7 @@ describe("#score", () => {
   );
 
   test("handles hsl colors with lightness higher than 50", () =>
-    expect(Color.score("hsl(210, 30%, 68%)", "#ffffff")) |> toEqual(2.35)
+    expect(Color.score("hsl(210, 30%, 68%)", "#ffffff")) |> toEqual(2.31)
   );
 
   test("handles two hsl colors", () =>
