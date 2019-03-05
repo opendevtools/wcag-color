@@ -22,6 +22,10 @@ describe("#score", () => {
     expect(Color.score("fff", "777")) |> toEqual(4.48)
   );
 
+  test("handles hex with non-uniform shorthand", () =>
+    expect(Color.score("08f", "fff")) |> toEqual(3.52)
+  );
+
   test("handles rgb colors", () =>
     expect(Color.score("rgb(255,255,255)", "#777777")) |> toEqual(4.48)
   );

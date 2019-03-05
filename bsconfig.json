@@ -9,7 +9,7 @@
     { "dir": "__tests__", "type": "dev" }
   ],
   "package-specs": {
-    "module": "commonjs"
+    "module": "es6"
   },
   "bs-dev-dependencies": ["@glennsl/bs-jest"],
   "suffix": ".bs.js",

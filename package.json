@@ -1,11 +1,16 @@
 {
   "name": "wcag-color",
   "version": "0.1.0",
+  "main": "dist/wcag-color.cjs.js",
+  "module": "dist/wcag-color.esm.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "rollup:build": "rollup -c",
+    "prepare": "npm run build && npm run rollup:build"
   },
   "keywords": [
     "BuckleScript"
@@ -13,7 +18,18 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@glennsl/bs-jest": "^0.4.7",
-    "bs-platform": "^4.0.18"
-  }
+    "@babel/core": "7.3.4",
+    "@babel/preset-env": "7.3.4",
+    "@glennsl/bs-jest": "0.4.7",
+    "babel-jest": "^23.6.0",
+    "bs-platform": "4.0.18",
+    "jest": "^24.1.0",
+    "rollup": "1.4.1",
+    "rollup-plugin-babel": "4.3.2",
+    "rollup-plugin-commonjs": "9.2.1",
+    "rollup-plugin-copier": "1.1.0",
+    "rollup-plugin-filesize": "6.0.1",
+    "rollup-plugin-node-resolve": "4.0.1"
+  },
+  "dependencies": {}
 }

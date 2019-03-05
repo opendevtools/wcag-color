@@ -3,5 +3,8 @@
 .bsb.lock
 .vscode
 npm-debug.log
-/lib
+/lib/bs/
+/lib/js/
+/lib/es6/
+/dist
 /node_modules/
