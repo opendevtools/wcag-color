@@ -11,8 +11,5 @@ let hexParts = t => {
 };
 
 let convert = hex => {
-  hex
-  |> Js.String.replace("#", "")
-  |> hexParts
-  |> Js.Array.map(x => "0x" ++ x |> float_of_string);
+  hex |> hexParts |> Js.Array.map(x => "0x" ++ x |> float_of_string);
 };

@@ -13,7 +13,8 @@
     "test:ci": "jest",
     "test:watch": "jest --watch",
     "rollup:build": "rollup -c",
-    "prepare": "npm run build && npm run rollup:build"
+    "prepare": "npm run build && npm run rollup:build",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "WCAG",
