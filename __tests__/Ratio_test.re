@@ -61,7 +61,7 @@ describe("#calculate", () => {
 
   test("handles hsl colors with lightness higher than 50", () =>
     expect(Ratio.calculate("hsl(210, 30%, 68%)", "#ffffff"))
-    |> toEqual(2.35)
+    |> toEqual(2.31)
   );
 
   test("handles two hsl colors", () =>

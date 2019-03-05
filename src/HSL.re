@@ -15,7 +15,7 @@ let createRgbFromHsl = (h, s, l) => {
 
   let q =
     switch (l) {
-    | l when l < 50.0 => l *. (1.0 +. s)
+    | l when l < 0.5 => l *. (1.0 +. s)
     | _ => l +. s -. l *. s
     };
   let p = 2.0 *. l -. q;
