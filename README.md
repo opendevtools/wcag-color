@@ -43,7 +43,7 @@ ratio('hsl(210, 100%, 40%)', '#ffffff') // 5.57
 score(foreground: string, background: string) => 'Fail' | 'AA Large' | 'AA' | 'AAA'
 ```
 
-### Example
+#### Example
 
 ```js
 import { score } from 'wcag-color'
@@ -59,7 +59,7 @@ score('hsl(210, 100%, 40%)', '#ffffff') // AA
 scoreFromRatio(ratio: number) => 'Fail' | 'AA Large' | 'AA' | 'AAA'
 ```
 
-### Example
+#### Example
 
 ```js
 import { scoreFromRatio } from 'wcag-color'
