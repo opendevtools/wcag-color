@@ -1,5 +1,6 @@
 # WCAG Color
 
+[![npm version](https://badge.fury.io/js/wcag-color.svg)](https://badge.fury.io/js/wcag-color)
 [![Build Status](https://travis-ci.com/believer/wcag-color.svg?branch=master)](https://travis-ci.com/believer/wcag-color)
 
 According to the WHO an [estimated 1.3 billion](https://www.who.int/en/news-room/fact-sheets/detail/blindness-and-visual-impairment)
