@@ -1,38 +1,21 @@
 open Jest;
 open Expect;
 
-describe("#calculateFromRatio", () => {
-  test("handles AAA", () =>
-    expect(Score.calculateFromRatio(7.1)) |> toEqual("AAA")
-  );
+testAll(
+  "#calculateFromRatio",
+  [(7.1, "AAA"), (4.6, "AA"), (3.9, "AA Large"), (2.9, "Fail")],
+  ((ratio, score)) =>
+  expect(Score.calculateFromRatio(ratio)) |> toEqual(score)
+);
 
-  test("handles AA", () =>
-    expect(Score.calculateFromRatio(4.6)) |> toEqual("AA")
-  );
-
-  test("handles AA Large", () =>
-    expect(Score.calculateFromRatio(3.9)) |> toEqual("AA Large")
-  );
-
-  test("handles white on grayish", () =>
-    expect(Score.calculateFromRatio(2.9)) |> toEqual("Fail")
-  );
-});
-
-describe("#calculate", () => {
-  test("handles AAA", () =>
-    expect(Score.calculate("#ffffff", "#000000")) |> toEqual("AAA")
-  );
-
-  test("handles AA", () =>
-    expect(Score.calculate("#ffffff", "#666666")) |> toEqual("AA")
-  );
-
-  test("handles AA Large", () =>
-    expect(Score.calculate("#ffffff", "#888888")) |> toEqual("AA Large")
-  );
-
-  test("handles white on grayish", () =>
-    expect(Score.calculate("#ffffff", "#cccccc")) |> toEqual("Fail")
-  );
-});
+testAll(
+  "#calculate",
+  [
+    ("#ffffff", "#000000", "AAA"),
+    ("#ffffff", "#666666", "AA"),
+    ("#ffffff", "#888888", "AA Large"),
+    ("#ffffff", "#cccccc", "Fail"),
+  ],
+  ((foreground, background, score)) =>
+  expect(Score.calculate(foreground, background)) |> toEqual(score)
+);
