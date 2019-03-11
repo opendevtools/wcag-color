@@ -68,6 +68,23 @@ import { scoreFromRatio } from 'wcag-color'
 scoreFromRatio(7.5) // AAA
 ```
 
+### Best color out of two
+
+`best` takes two colors and a background color and returns the color which is
+best suited, from a contrast perspective, for that background color.
+
+```js
+best(firstColor: string, secondColor: string, background: string) => string
+```
+
+#### Example
+
+```js
+import { best } from 'wcag-color'
+
+best('#ffffff', '#000000', '#ffffff') // #000000
+```
+
 ## Score and ratio
 
 - **Fail** - Your text has a contrast ratio of less than `3.0`
