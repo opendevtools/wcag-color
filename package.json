@@ -35,7 +35,7 @@
     "@babel/preset-env": "7.4.2",
     "@glennsl/bs-jest": "0.4.8",
     "babel-jest": "23.6.0",
-    "bs-platform": "4.0.18",
+    "bs-platform": "5.0.0",
     "is-ci-cli": "1.1.1",
     "jest": "24.7.0",
     "rollup": "1.4.1",
