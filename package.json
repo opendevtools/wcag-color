@@ -36,7 +36,7 @@
     "@glennsl/bs-jest": "0.4.9",
     "babel-jest": "24.9.0",
     "bs-platform": "5.0.6",
-    "is-ci-cli": "1.1.1",
+    "is-ci-cli": "2.0.0",
     "jest": "24.9.0",
     "rollup": "1.23.1",
     "rollup-plugin-babel": "4.3.3",
