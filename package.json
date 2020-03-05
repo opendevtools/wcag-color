@@ -31,8 +31,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "7.8.6",
-    "@babel/preset-env": "7.8.6",
+    "@babel/core": "7.8.7",
+    "@babel/preset-env": "7.8.7",
     "@glennsl/bs-jest": "0.4.10",
     "babel-jest": "25.1.0",
     "bs-platform": "7.1.1",
