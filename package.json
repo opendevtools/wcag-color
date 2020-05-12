@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "bsb -make-world",
-    "start": "bsb -make-world -w",
+    "start": "BS_WATCH_CLEAR=true bsb -make-world -w",
     "clean": "bsb -clean-world",
     "test": "is-ci \"test:ci\" \"test:watch\"",
     "test:ci": "jest",
