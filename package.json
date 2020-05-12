@@ -34,6 +34,8 @@
     "@babel/core": "7.9.6",
     "@babel/preset-env": "7.9.6",
     "@glennsl/bs-jest": "0.5.1",
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/git": "9.0.0",
     "babel-jest": "26.0.1",
     "bs-platform": "7.3.2",
     "is-ci-cli": "2.0.0",
