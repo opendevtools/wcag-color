@@ -23,6 +23,8 @@ testAll(
     ("hsl(210, 30%, 48%)", "#ffffff", 4.47),
     ("hsl(210, 30%, 68%)", "#ffffff", 2.31),
     ("hsl(0, 0%, 20%)", "hsl(0, 0%, 100%)", 12.63),
+    ("hsl(0, 100%, 40%)", "#fff", 5.89),
+    ("hsl(360, 100%, 40%)", "#fff", 5.89),
   ],
   ((fg, bg, expected)) =>
   expect(Ratio.calculate(fg, bg)) |> toEqual(expected)

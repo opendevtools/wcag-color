@@ -21,7 +21,13 @@ let createRgbFromHsl = (h, s, l) => {
   let p = 2.0 *. l -. q;
   let rgb = hueToRgb(p, q);
 
-  [|rgb(tempR), rgb(hue), rgb(tempB)|];
+  let b =
+    switch (tempB) {
+    | x when x < 0. => 0.
+    | x => x
+    };
+
+  [|rgb(tempR), rgb(hue), rgb(b)|];
 };
 
 /*
@@ -35,6 +41,7 @@ let convert = hsl => {
     hsl =>
       switch (hsl) {
       | [|_, 0.0, l|] => [|l, l, l|]
+      | [|h, s, l|] when h === 3.6 => createRgbFromHsl(0., s, l)
       | [|h, s, l|] => createRgbFromHsl(h, s, l)
       | _ => [||]
       }
