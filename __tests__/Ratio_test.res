@@ -3,7 +3,7 @@ open Expect;
 
 testAll(
   "color contrasts",
-  [
+  list[
     ("#ffffff", "#ffffff", 1.0),
     ("ffffff", "ffffff", 1.0),
     ("rgb(255, 255, 255)", "rgb(255, 255, 255)", 1.0),
