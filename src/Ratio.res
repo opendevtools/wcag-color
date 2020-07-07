@@ -1,21 +1,21 @@
 type t =
   | HSL
   | RGB
-  | HEX;
+  | HEX
 
 let typeOfColor = color =>
   switch (color |> Js.String.substring(~from=0, ~to_=3)) {
   | "rgb" => RGB
   | "hsl" => HSL
   | _ => HEX
-  };
+  }
 
 let parseNumbers = rgb => {
-  switch (rgb |> Js.String.match([%re "/\\d+/g"])) {
+  switch (rgb |> Js.String.match_(%re("/\\d+/g"))) {
   | Some(colors) => colors |> Js.Array.map(x => x->float_of_string)
-  | None => [||]
-  };
-};
+  | None => []
+  }
+}
 
 let parseColor = color =>
   (
@@ -26,7 +26,7 @@ let parseColor = color =>
     }
   )
   |> Luminance.convert
-  |> (v => v +. 0.05);
+  |> (v => v +. 0.05)
 
 let calculate = (foreground, background) => {
   switch (foreground |> Utils.removeHash, background |> Utils.removeHash) {
@@ -40,5 +40,5 @@ let calculate = (foreground, background) => {
     )
     |> Js.Float.toFixedWithPrecision(~digits=2)
     |> Js.Float.fromString
-  };
-};
+  }
+}
