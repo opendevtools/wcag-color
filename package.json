@@ -40,7 +40,7 @@
     "bs-platform": "8.2.0",
     "is-ci-cli": "2.1.2",
     "jest": "26.4.2",
-    "rollup": "2.26.10",
+    "rollup": "2.26.11",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-copier": "1.1.0",
