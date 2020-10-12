@@ -39,7 +39,7 @@
     "babel-jest": "26.5.2",
     "bs-platform": "8.2.0",
     "is-ci-cli": "2.1.2",
-    "jest": "26.5.2",
+    "jest": "26.5.3",
     "rollup": "2.29.0",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-commonjs": "10.1.0",
