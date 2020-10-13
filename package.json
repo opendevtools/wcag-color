@@ -37,7 +37,7 @@
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/git": "9.0.0",
     "babel-jest": "26.5.2",
-    "bs-platform": "8.2.0",
+    "bs-platform": "8.3.1",
     "is-ci-cli": "2.1.2",
     "jest": "26.5.3",
     "rollup": "2.29.0",
