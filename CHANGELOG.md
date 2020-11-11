@@ -3,7 +3,7 @@
 
 ### Features
 
-* release under opendevtools organization ([e141c28](https://github.com/opendevtools/wcag-color/commit/e141c28ba13388e3c6c03956afb767cd7f80c9c5))
+* release under @opendevtools organization ([e141c28](https://github.com/opendevtools/wcag-color/commit/e141c28ba13388e3c6c03956afb767cd7f80c9c5))
 
 ## [1.1.1](https://github.com/believer/wcag-color/compare/v1.1.0...v1.1.1) (2020-05-12)
 
