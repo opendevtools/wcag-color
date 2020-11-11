@@ -11,8 +11,4 @@ let relative = rgb =>
 /*
  * https://www.w3.org/WAI/GL/wiki/Relative_luminance
  */
-let convert = color => {
-  open Js.Array
-
-  color |> map(toSRGB) |> map(toRGB) |> relative
-}
+let convert = color => color->Js.Array2.map(toSRGB)->Js.Array2.map(toRGB)->relative

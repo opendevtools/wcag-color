@@ -34,13 +34,13 @@ let createRgbFromHsl = (h, s, l) => {
  */
 let convert = hsl => {
   hsl
-  |> Js.Array.map(x => x /. 100.0)
-  |> (hsl =>
+  ->Js.Array2.map(x => x /. 100.0)
+  ->(hsl =>
     switch hsl {
     | [_, 0.0, l] => [l, l, l]
     | [h, s, l] when h === 3.6 => createRgbFromHsl(0., s, l)
     | [h, s, l] => createRgbFromHsl(h, s, l)
     | _ => []
     })
-  |> Js.Array.map(x => x *. 255.0)
+  ->Js.Array2.map(x => x *. 255.0)
 }

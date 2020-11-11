@@ -4,33 +4,33 @@ type t =
   | HEX
 
 let typeOfColor = color =>
-  switch color |> Js.String.substring(~from=0, ~to_=3) {
+  switch color->Js.String2.substring(~from=0, ~to_=3) {
   | "rgb" => RGB
   | "hsl" => HSL
   | _ => HEX
   }
 
 let parseNumbers = rgb => {
-  switch rgb |> Js.String.match_(%re("/\\d+/g")) {
-  | Some(colors) => colors |> Js.Array.map(x => x->float_of_string)
+  switch rgb->Js.String2.match_(%re("/\\d+/g")) {
+  | Some(colors) => colors->Js.Array2.map(x => x->float_of_string)
   | None => []
   }
 }
 
 let parseColor = color =>
-  switch color |> typeOfColor {
-  | HEX => color |> HEX.convert
-  | HSL => color |> parseNumbers |> HSL.convert
-  | RGB => color |> parseNumbers
+  switch color->typeOfColor {
+  | HEX => color->HEX.convert
+  | HSL => color->parseNumbers->HSL.convert
+  | RGB => color->parseNumbers
   }
-  |> Luminance.convert
-  |> (v => v +. 0.05)
+  ->Luminance.convert
+  ->(v => v +. 0.05)
 
 let calculate = (foreground, background) => {
-  switch (foreground |> Utils.removeHash, background |> Utils.removeHash) {
+  switch (Utils.removeHash(foreground), Utils.removeHash(background)) {
   | (fg, bg) when fg === bg => 1.0
   | (fg, bg) =>
-    switch (fg |> parseColor, bg |> parseColor) {
+    switch (parseColor(fg), parseColor(bg)) {
     | (f, b) when f > b => f /. b
     | (f, b) => b /. f
     }

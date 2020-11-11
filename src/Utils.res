@@ -1,1 +1,1 @@
-let removeHash = str => str |> Js.String.replace("#", "")
+let removeHash = str => str->Js.String2.replace("#", "")
