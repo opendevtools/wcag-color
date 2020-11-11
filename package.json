@@ -1,5 +1,5 @@
 {
-  "name": "wcag-color",
+  "name": "@opendevtools/wcag-color",
   "description": "Color constrast helpers to achieve the WCAG 2.0 standard",
   "version": "1.1.1",
   "main": "dist/wcag-color.cjs.js",
@@ -26,8 +26,8 @@
     "ReasonML"
   ],
   "author": {
-    "name": "Rickard Laurin",
-    "email": "rickard.laurin@gmail.com"
+    "name": "Rickard Natt och Dag",
+    "email": "nattochdag@hey.com"
   },
   "license": "MIT",
   "devDependencies": {
@@ -49,11 +49,11 @@
   },
   "dependencies": {},
   "bugs": {
-    "url": "https://github.com/believer/wcag-color/issues"
+    "url": "https://github.com/opendevtools/wcag-color/issues"
   },
-  "homepage": "https://github.com/believer/wcag-color#readme",
+  "homepage": "https://github.com/opendevtools/wcag-color#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/believer/wcag-color.git"
+    "url": "https://github.com/opendevtools/wcag-color.git"
   }
 }

@@ -1,7 +1,7 @@
 # WCAG Color
 
-[![npm version](https://badge.fury.io/js/wcag-color.svg)](https://badge.fury.io/js/wcag-color)
-[![](https://github.com/believer/wcag-color/workflows/Release/badge.svg)](https://github.com/believer/wcag-color/actions?workflow=Release)
+[![](https://github.com/opendevtools/wcag-color/workflows/Release/badge.svg)](https://github.com/opendevtools/wcag-color/actions?workflow=Release)
+[![npm (scoped)](https://img.shields.io/npm/v/@opendevtools/wcag-color)](https://npm.im/@opendevtools/wcag-color)
 
 According to the WHO an [estimated 1.3 billion](https://www.who.int/en/news-room/fact-sheets/detail/blindness-and-visual-impairment)
 people live with some form of visual impairment. This includes people who are legally blind and people with less than 20/20 vision.
@@ -11,7 +11,7 @@ This library helps you achieve the accessibility standards for **color contrast*
 ## Installation
 
 ```
-npm install wcag-color
+npm install @opendevtools/wcag-color
 ```
 
 ## API
@@ -31,9 +31,9 @@ ratio(foreground: string, background: string) => number
 #### Example
 
 ```js
-import { ratio } from 'wcag-color'
+import { ratio } from "wcag-color";
 
-ratio('hsl(210, 100%, 40%)', '#ffffff') // 5.57
+ratio("hsl(210, 100%, 40%)", "#ffffff"); // 5.57
 ```
 
 ### Score
@@ -47,9 +47,9 @@ score(foreground: string, background: string) => 'Fail' | 'AA Large' | 'AA' | 'A
 #### Example
 
 ```js
-import { score } from 'wcag-color'
+import { score } from "wcag-color";
 
-score('hsl(210, 100%, 40%)', '#ffffff') // AA
+score("hsl(210, 100%, 40%)", "#ffffff"); // AA
 ```
 
 ### Score from ratio
@@ -63,9 +63,9 @@ scoreFromRatio(ratio: number) => 'Fail' | 'AA Large' | 'AA' | 'AAA'
 #### Example
 
 ```js
-import { scoreFromRatio } from 'wcag-color'
+import { scoreFromRatio } from "wcag-color";
 
-scoreFromRatio(7.5) // AAA
+scoreFromRatio(7.5); // AAA
 ```
 
 ### Best color out of two
@@ -80,9 +80,9 @@ best(firstColor: string, secondColor: string, background: string) => string
 #### Example
 
 ```js
-import { best } from 'wcag-color'
+import { best } from "wcag-color";
 
-best('#ffffff', '#000000', '#ffffff') // #000000
+best("#ffffff", "#000000", "#ffffff"); // #000000
 ```
 
 ## Score and ratio
