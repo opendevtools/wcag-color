@@ -31,7 +31,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "7.12.3",
+    "@babel/core": "7.13.8",
     "@babel/preset-env": "7.12.1",
     "@glennsl/bs-jest": "0.6.0",
     "@semantic-release/changelog": "5.0.1",
