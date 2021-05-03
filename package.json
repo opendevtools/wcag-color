@@ -27,15 +27,13 @@
   ],
   "author": {
     "name": "Rickard Natt och Dag",
-    "email": "nattochdag@hey.com"
+    "email": "rickard@nattochdag.dev"
   },
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "7.13.14",
     "@babel/preset-env": "7.13.12",
     "@glennsl/bs-jest": "0.7.0",
-    "@semantic-release/changelog": "5.0.1",
-    "@semantic-release/git": "9.0.0",
     "babel-jest": "26.6.3",
     "bs-platform": "9.0.2",
     "is-ci-cli": "2.2.0",
