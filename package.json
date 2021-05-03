@@ -12,7 +12,7 @@
     "build": "bsb -make-world",
     "start": "BS_WATCH_CLEAR=true bsb -make-world -w",
     "clean": "bsb -clean-world",
-    "test": "is-ci \"test:ci\" \"test:watch\"",
+    "test": "is-ci-cli test:ci test:watch",
     "test:ci": "jest",
     "test:watch": "jest --watch",
     "rollup:build": "rollup -c",
@@ -24,9 +24,7 @@
     "Color",
     "Color contrast",
     "Accessibility",
-    "BuckleScript",
-    "Reason",
-    "ReasonML"
+    "ReScript"
   ],
   "author": {
     "name": "Rickard Natt och Dag",
