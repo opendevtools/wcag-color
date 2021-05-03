@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/opendevtools/wcag-color/compare/v1.2.0...v1.2.1) (2021-05-03)
+
+
+### Bug Fixes
+
+* update configs ([8321ca7](https://github.com/opendevtools/wcag-color/commit/8321ca77583ec61517aebdf0efbb211502beea8f))
+
 # [1.2.0](https://github.com/opendevtools/wcag-color/compare/v1.1.1...v1.2.0) (2020-11-11)
 
 
