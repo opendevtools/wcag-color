@@ -5,6 +5,9 @@
   "main": "dist/wcag-color.cjs.js",
   "module": "dist/wcag-color.esm.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "bsb -make-world",
     "start": "BS_WATCH_CLEAR=true bsb -make-world -w",
