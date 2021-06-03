@@ -7,10 +7,10 @@ import pkg from './package.json'
 
 export default [
   {
-    input: 'lib/index.js',
+    input: 'src/index.js',
     output: [
       { file: pkg.main, format: 'cjs' },
-      { file: pkg.module, format: 'es' }
+      { file: pkg.module, format: 'es' },
     ],
     plugins: [
       resolve(),
@@ -20,12 +20,12 @@ export default [
       copier({
         items: [
           {
-            src: 'lib/index.d.ts',
+            src: 'src/index.d.ts',
             dest: 'dist/index.d.ts',
-            createPath: true
-          }
-        ]
-      })
-    ]
-  }
+            createPath: true,
+          },
+        ],
+      }),
+    ],
+  },
 ]
