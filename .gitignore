@@ -3,9 +3,7 @@
 .bsb.lock
 .vscode
 npm-debug.log
-/lib/bs/
-/lib/js/
-/lib/es6/
+/lib
 /dist
 /node_modules/
 coverage
