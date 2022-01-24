@@ -2,7 +2,7 @@
 'use strict';
 
 var Best = require("../src/Best.bs.js");
-var Jest = require("@glennsl/bs-jest/lib/js/src/jest.bs.js");
+var Jest = require("@glennsl/bs-jest/src/jest.bs.js");
 
 Jest.testAll("color contrasts", {
       hd: [
