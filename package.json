@@ -38,7 +38,7 @@
     "is-ci-cli": "2.2.0",
     "prettier": "2.5.1",
     "rescript": "9.1.4",
-    "rollup": "2.68.0",
+    "rollup": "2.69.1",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-copier": "1.1.0",
