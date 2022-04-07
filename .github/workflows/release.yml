@@ -5,32 +5,49 @@ on:
     branches: 
       - main
 
-permissions: write-all
-
 jobs:
-  build:
-
+  test:
+    name: Tests
     runs-on: ubuntu-latest 
-
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
 
-    - name: Run tests and linting
-      run: |
-        npm install
-        npm test
-      env:
-        CI: true
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Semantic Release
-      uses: cycjimmy/semantic-release-action@v2
-      with:
-        semantic_version: 17.1.1
-        extra_plugins: |
-          @semantic-release/changelog@5.0.1
-          @semantic-release/git@9.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Download dependencies
+        uses: bahmutov/npm-install@v1
 
+      - name: Build application
+        run: npm run build
+
+      - name: Run tests
+        run: npm test
+
+  release:
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Download dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build project
+        run: npm run build
+
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v2
+        with:
+          semantic_version: 17.1.1
+          extra_plugins: |
+            @semantic-release/changelog@5.0.1
+            @semantic-release/git@9.0
+        env:
+          GITHUB_TOKEN: $
+          NPM_TOKEN: $

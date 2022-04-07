@@ -32,20 +32,19 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "7.17.5",
+    "@babel/core": "7.17.9",
     "@babel/preset-env": "7.16.11",
     "@glennsl/bs-jest": "0.7.0",
     "is-ci-cli": "2.2.0",
-    "prettier": "2.5.1",
+    "prettier": "2.6.2",
     "rescript": "9.1.4",
-    "rollup": "2.68.0",
+    "rollup": "2.70.1",
     "rollup-plugin-babel": "4.4.0",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-copier": "1.1.0",
     "rollup-plugin-filesize": "9.1.2",
     "rollup-plugin-node-resolve": "5.2.0"
   },
-  "dependencies": {},
   "bugs": {
     "url": "https://github.com/opendevtools/wcag-color/issues"
   },

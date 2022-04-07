@@ -7,25 +7,21 @@ on:
 
 jobs:
   test:
-    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
-
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
-        os: [ubuntu-latest, macOS-latest]
-
+    name: Run tests
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
 
-    - name: Run tests and linting
-      run: |
-        npm ci
-        npm test
-      env:
-        CI: true
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Download dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run tests and linting
+        run: npm test
+
