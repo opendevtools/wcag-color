@@ -5,6 +5,7 @@ var HEX = require("./HEX.bs.js");
 var HSL = require("./HSL.bs.js");
 var Utils = require("./Utils.bs.js");
 var Luminance = require("./Luminance.bs.js");
+var Belt_Option = require("rescript/lib/js/belt_Option.js");
 var Caml_format = require("rescript/lib/js/caml_format.js");
 
 function typeOfColor(color) {
@@ -22,7 +23,9 @@ function typeOfColor(color) {
 function parseNumbers(rgb) {
   var colors = rgb.match(/\d+/g);
   if (colors !== null) {
-    return colors.map(Caml_format.caml_float_of_string);
+    return colors.map(function (x) {
+                return Caml_format.float_of_string(Belt_Option.getWithDefault(x, ""));
+              });
   } else {
     return [];
   }

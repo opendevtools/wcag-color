@@ -1,8 +1,8 @@
 let hueToRgb = (p, q, t) => {
   switch t {
-  | x when x < 1.0 /. 6.0 => p +. (q -. p) *. 6.0 *. x
-  | x when x < 0.5 => q
-  | x when x < 2.0 /. 3.0 => p +. (q -. p) *. 6.0 *. (2.0 /. 3.0 -. x)
+  | x if x < 1.0 /. 6.0 => p +. (q -. p) *. 6.0 *. x
+  | x if x < 0.5 => q
+  | x if x < 2.0 /. 3.0 => p +. (q -. p) *. 6.0 *. (2.0 /. 3.0 -. x)
   | _ => p
   }
 }
@@ -14,14 +14,14 @@ let createRgbFromHsl = (h, s, l) => {
   let tempB = hue -. 1.0 /. 3.0
 
   let q = switch l {
-  | l when l < 0.5 => l *. (1.0 +. s)
+  | l if l < 0.5 => l *. (1.0 +. s)
   | _ => l +. s -. l *. s
   }
   let p = 2.0 *. l -. q
   let rgb = hueToRgb(p, q)
 
   let b = switch tempB {
-  | x when x < 0. => 0.
+  | x if x < 0. => 0.
   | x => x
   }
 
@@ -38,7 +38,7 @@ let convert = hsl => {
   ->(hsl =>
     switch hsl {
     | [_, 0.0, l] => [l, l, l]
-    | [h, s, l] when h === 3.6 => createRgbFromHsl(0., s, l)
+    | [h, s, l] if h === 3.6 => createRgbFromHsl(0., s, l)
     | [h, s, l] => createRgbFromHsl(h, s, l)
     | _ => []
     })

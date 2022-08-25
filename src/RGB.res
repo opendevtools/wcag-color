@@ -1,6 +1,6 @@
 let toNumbers = rgb => {
   switch rgb->Js.String2.match_(%re("/\\d+\\.?\\d?/g")) {
-  | Some(colors) => colors->Js.Array2.map(x => x->float_of_string)
+  | Some(colors) => colors->Js.Array2.map(x => x->Belt.Option.getWithDefault("")->float_of_string)
   | None => []
   }
 }
@@ -21,6 +21,7 @@ let fromRgba = (fg, bg) => {
 
       [r3, g3, b3]
     }
+
   | _ => []
   }
 }

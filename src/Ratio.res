@@ -11,8 +11,8 @@ let typeOfColor = color =>
   }
 
 let parseNumbers = rgb => {
-  switch rgb->Js.String2.match_(%re("/\\d+/g")) {
-  | Some(colors) => colors->Js.Array2.map(x => x->float_of_string)
+  switch rgb->Js.String2.match_(%re("/\d+/g")) {
+  | Some(colors) => colors->Js.Array2.map(x => x->Belt.Option.getWithDefault("")->float_of_string)
   | None => []
   }
 }
@@ -28,10 +28,10 @@ let parseColor = color =>
 
 let calculate = (foreground, background) => {
   switch (Utils.removeHash(foreground), Utils.removeHash(background)) {
-  | (fg, bg) when fg === bg => 1.0
+  | (fg, bg) if fg === bg => 1.0
   | (fg, bg) =>
     switch (parseColor(fg), parseColor(bg)) {
-    | (f, b) when f > b => f /. b
+    | (f, b) if f > b => f /. b
     | (f, b) => b /. f
     }
     |> Js.Float.toFixedWithPrecision(~digits=2)
