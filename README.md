@@ -31,7 +31,7 @@ ratio(foreground: string, background: string) => number
 #### Example
 
 ```js
-import { ratio } from 'wcag-color'
+import { ratio } from '@opendevtools/wcag-color'
 
 ratio('hsl(210, 100%, 40%)', '#ffffff') // 5.57
 ```
@@ -47,7 +47,7 @@ score(foreground: string, background: string) => 'Fail' | 'AA Large' | 'AA' | 'A
 #### Example
 
 ```js
-import { score } from 'wcag-color'
+import { score } from '@opendevtools/wcag-color'
 
 score('hsl(210, 100%, 40%)', '#ffffff') // AA
 ```
@@ -63,7 +63,7 @@ scoreFromRatio(ratio: number) => 'Fail' | 'AA Large' | 'AA' | 'AAA'
 #### Example
 
 ```js
-import { scoreFromRatio } from 'wcag-color'
+import { scoreFromRatio } from '@opendevtools/wcag-color'
 
 scoreFromRatio(7.5) // AAA
 ```
@@ -80,7 +80,7 @@ best(firstColor: string, secondColor: string, background: string) => string
 #### Example
 
 ```js
-import { best } from 'wcag-color'
+import { best } from '@opendevtools/wcag-color'
 
 best('#ffffff', '#000000', '#ffffff') // #000000
 ```
